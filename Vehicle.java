@@ -1,53 +1,38 @@
-package CarDealership;
+package Collections;
 
 public class Vehicle {
-	private String name_of_brand;
-	private String name_of_car;
-	private double edition;
-	private double price_on_road;
-	private String colour;
-	private String vehicle_full_name;
-	public String getName_of_brand() {
-		return name_of_brand;
+	private String make;
+	private String name;
+	private String color;
+	private double price;
+	
+	public Vehicle(String make, String name, String color, double price) {
+		super();
+		this.make = make;
+		this.name = name;
+		this.color = color;
+		this.price = price;
 	}
-	public void setName_of_brand(String name_of_brand) {
-		this.name_of_brand = name_of_brand;
+	public String getMake() {
+		return make;
 	}
-	public String getName_of_car() {
-		return name_of_car;
+	
+	public String getName() {
+		return name;
 	}
-	public void setName_of_car(String name_of_car) {
-		this.name_of_car = name_of_car;
+	
+	public String getColor() {
+		return color;
 	}
-	public double getEdition() {
-		return edition;
+	
+	public double getPrice() {
+		return price;
 	}
-	public void setEdition(double edition) {
-		this.edition = edition;
-	}
-	public double getPrice_on_road() {
-		return price_on_road;
-	}
-	public void setPrice_on_road(double price_on_road) {
-		this.price_on_road = price_on_road;
-	}
-	public String getColour() {
-		return colour;
-	}
-	public void setColour(String colour) {
-		this.colour = colour;
-	}
-	public String getVehicle_full_name() {
-		return vehicle_full_name;
-	}
-//	public void setVehicle_full_name() {
-//		this.vehicle_full_name = name_of_brand+" "+name_of_car+" "+edition;
-//	}
 	@Override
 	public String toString() {
-		return "Vehicle [name_of_brand=" + name_of_brand + ", name_of_car=" + name_of_car + ", edition=" + edition
-				+ ", colour=" + colour + "]";
+		return "Vehicle [make=" + make + ", name=" + name + ", color=" + color + ", price=" + price + "]";
 	}
+	
 	
 	
 
