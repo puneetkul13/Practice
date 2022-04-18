@@ -1,24 +1,22 @@
-package Inheritance;
+package SerialisationDeserialisation;
 
-public class Person {
-	String name;
-	private String address;
-	public Person(String name, String address) {
+import java.io.Serializable;
+
+public class Person implements Serializable {
+	public String name;
+	public int age;
+	public int salary;
+//	private long serialVersionUID = 1L;
+	public Person(String name, int age, int salary) {
 		this.name = name;
-		this.address = address;
+		this.age = age;
+		this.salary = salary;
 	}
-	public String getName() {
-		return this.name;
-	}
-	public String getAddress() {
-		return this.address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
+	
+	
 	@Override
 	public String toString() {
-		return "Person [name=" + name + ", address=" + address + "]";
+		return "Person [name=" + name + ", age=" + age + ", salary=" + salary + "]";
 	}
 	
 }

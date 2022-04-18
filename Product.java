@@ -1,33 +1,34 @@
-package MultiThreadingGCornell;
+package ThreadingLesson3;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class Product {
 	int id;
 	String name;
 	public Product(int id, String name) {
-		this.id = id;
-		this.name  = name;
+		this.id= id;
+		this.name = name;
 	}
 
 }
 class InventoryManager{
-	CopyOnWriteArrayList<Product> p = new CopyOnWriteArrayList<>();
-//	ArrayList<Product>  p= new ArrayList<>();
-	public void adder() throws InterruptedException {
-		for(int i=0;i<1000;i++) {
-			Product p1 = new Product(i, "Bottle--"+i);
-			p.add(p1);
-			
-			System.out.println("added--"+p1.name);
-		}
-	}
-	public void displayer() throws InterruptedException {
+	List<Product> prod = new CopyOnWriteArrayList<Product>();
+	public void adder() {
 		
-		for(Product p1:p) {
-			System.out.println("displaying--"+p1.name);
+		for(int i=0;i<100;i++) {
+			Product product = new Product(i,"Bottle--"+i);
+			prod.add(product);
+			System.out.println("Adding--"+i);
 			
 		}
+		
+		
+	}
+	public void displayer() {
+		for(Product p:prod) {
+			System.out.println("Displaying--"+p.id);
+		}
+		
 	}
 }
